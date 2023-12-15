@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-menu.css">
+    
 </head>
 
 <body>
@@ -16,19 +17,44 @@
                 <a href="about.html"><li class="lists">About</li></a>
                 <a href="contact.html"><li class="lists">Contact</li></a>
                 <li class="lists">
-                    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
-                    <lord-icon
-                        src="https://cdn.lordicon.com/odavpkmb.json"
-                        trigger="hover"
-                        colors="primary:#ffffff,secondary:#A98F76"
-                        style="width:40px;height:40px;top: -4px;">
-                    </lord-icon>
+                    <div class="totalQuantity">0</div>
+                    <button id="myBtn">
+                        <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/odavpkmb.json"
+                            trigger="hover"
+                            colors="primary:#ffffff,secondary:#A98F76"
+                            style="width:40px;height:40px;top: -4px;">
+                        </lord-icon>
+                    </button>
                 </li>
             </ol>
         </div>
     </nav>
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <!-- Add your modal content here -->
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h3 class="cart-heading">Your Order</h3>
+            <hr>
+            <div class="cart-items"></div>
+            <div class="buttons">
+                <div class="checkout">
+                    <a href="#">CHECKOUT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--TO DO HERE-->
+    <h1 class="heading1">Menu</h1>
+    <hr class="linespace">
+
+    <div class="container" id="contain">
+        <!-- Dynamic product list will be inserted here -->
+        <div class="listProduct"></div>
+    </div>
 
     <div class="footer">
         <div class="side1">
@@ -58,4 +84,5 @@
         </div>
          
     </div>
+    <script src="script-menu.js" defer></script>
 </body>
