@@ -51,6 +51,8 @@ a{
 #myBtn{
     border: none;
     background-color: transparent;
+    position: relative;
+    bottom: 25px;
 }
 
 #myBtn:hover{
@@ -178,6 +180,12 @@ a{
     from {opacity: 0;}
     to {opacity:1 ;}
   }
+
+.totalQuantity{
+    position: relative;
+    left: 40px;
+    bottom: 10px;
+}
 
 .listProduct{
     display: grid;
