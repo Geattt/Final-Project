@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-contact.css">
     <script src="script-contact.js" defer></script> 
+    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
 </head>
 
 <body>
@@ -12,23 +13,40 @@
         <div>
             <img src="assets/Logo.jpg" class="logo">
             <ol>
-                <li class="lists">Home</li>
-                <li class="lists">Menu</li>
-                <li class="lists">About</li>
-                <li class="lists">Contact</li>
+                <li class="lists"><a href="main.html">Home</a></li>
+                <li class="lists"><a href="menu.html">Menu</a></li>
+                <li class="lists"><a href="about.html">About</a></li>
+                <li class="lists"><a href="contact.html">Contact</a></li>
                 <li class="lists">
-                    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+                    <div class="totalQuantity">0</div>
+                    <button id="myBtn">
                     <lord-icon
                         src="https://cdn.lordicon.com/odavpkmb.json"
                         trigger="hover"
                         colors="primary:#ffffff,secondary:#A98F76"
                         style="width:40px;height:40px;top: -4px;">
                     </lord-icon>
+                    </button>
                 </li>
 
             </ol>
         </div>
     </nav>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <!-- Add your modal content here -->
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h3 class="cart-heading">Your Order</h3>
+            <hr>
+            <div class="cart-items"></div>
+            <div class="buttons">
+                <div class="checkout">
+                    <a href="checkout.html">CHECKOUT</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="contactus">
         <section>
@@ -119,11 +137,7 @@
             <div class="card-border"></div>
             </div>
         </div>
-    </div>
-
-
-
-    
+    </div>  
 
     <div class="footer">
         <div class="side1">
