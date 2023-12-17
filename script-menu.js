@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
 let modal = document.getElementById('myModal')
 let containers = document.getElementById('contain')
 let modalc = document.getElementById('myCalorieModal')
@@ -79,7 +78,6 @@ function myCalorie(){
 }
 
 calorieText.addEventListener('click',()=>{
-    console.log('clcik')
     myCalorie();
 })
 
@@ -258,4 +256,4 @@ function changeQuantity($idProduct, $type){
     // reload html view cart
     addCartToHTML();
 }
-})
+
