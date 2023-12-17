@@ -94,8 +94,16 @@ async function checkVoucher() {
           const totalPriceHTML = document.querySelector('.totalPrice');
           const originalTotalPrice = parseFloat(totalPriceHTML.innerText.replace('$', ''));
           const discountedTotalPrice = originalTotalPrice - voucherData.value;
-          totalPriceHTML.innerText = `$${discountedTotalPrice.toFixed(0)}`;
-          // Mark the voucher as used
+
+          // Check if the discounted total price is smaller than zero
+        if (discountedTotalPrice < 0) {
+            // If the price is smaller than zero, set it to "Free"
+            totalPriceHTML.innerText = 'Free';
+          } else {
+            // Otherwise, display the discounted total price
+            totalPriceHTML.innerText = `$${discountedTotalPrice.toFixed(0)}`;
+          }
+          
           await fetch(`http://localhost:8888/vouchers/${voucherCode}`, {
             method: 'PUT',
             headers: {
@@ -105,6 +113,10 @@ async function checkVoucher() {
                 used: true,
             }),
         });
+        // Disable the voucher input field
+        voucherInput.disabled = true;
+        // Disable the voucher button
+        voucherButton.disabled = true;
         } else {
           alert('Invalid or used voucher!');
           // You can handle the case where the voucher is invalid or used
@@ -118,4 +130,9 @@ async function checkVoucher() {
     }
   }
   
-  
+  const buttonCheckout = document.querySelector('.buttonCheckout')
+  buttonCheckout.addEventListener('click',()=>{
+    alert('Order has been confirmed!')
+    //Go back to menu page
+    window.location.href = 'menu.html';
+  })
