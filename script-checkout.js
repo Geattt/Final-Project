@@ -87,6 +87,24 @@ async function checkVoucher() {
         if (voucherData && !voucherData.used) {
           alert('Voucher is valid!');
           // You can perform additional actions here if the voucher is valid
+          const totalDiscountHTML = document.querySelector('.totalDiscount');
+          totalDiscountHTML.innerText = `-$${voucherData.value}`;
+
+          // Update totalPriceHTML by subtracting the voucher discount
+          const totalPriceHTML = document.querySelector('.totalPrice');
+          const originalTotalPrice = parseFloat(totalPriceHTML.innerText.replace('$', ''));
+          const discountedTotalPrice = originalTotalPrice - voucherData.value;
+          totalPriceHTML.innerText = `$${discountedTotalPrice.toFixed(0)}`;
+          // Mark the voucher as used
+          await fetch(`http://localhost:8888/vouchers/${voucherCode}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                used: true,
+            }),
+        });
         } else {
           alert('Invalid or used voucher!');
           // You can handle the case where the voucher is invalid or used
@@ -96,7 +114,7 @@ async function checkVoucher() {
       }
     } catch (error) {
       console.error(error);
-      alert('Error checking voucher. Please try again.');
+      alert('Voucher is invalid! Please try again.');
     }
   }
   
