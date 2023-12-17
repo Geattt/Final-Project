@@ -31,7 +31,7 @@
             </ol>
         </div>
     </nav>
-
+    <h2 class="calorieText">Calorie Needed: 0</h2>
     <div id="myModal" class="modal">
         <div class="modal-content">
             <!-- Add your modal content here -->
@@ -46,10 +46,48 @@
             </div>
         </div>
     </div>
-
+    
+    <div id="myCalorieModal" class="calorie-modal">
+        <div class="calorie-modal-content">
+            <h2 class="calorie-heading">Total Daily Energy Expenditure</h2>
+            <div class="group">
+                <label for="gender">Gender</label>
+                <div class="gender">
+                    <input type="radio" name="gender" id="male" value="1">Male
+                    <input type="radio" name="gender" id="female" value="2">Female
+                </div>
+            </div>
+            <div class="group">
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" min="1" max="70" placeholder="19" value="">
+            </div>
+            <div class="group">
+                <label for="height">Height</label>
+                <input type="number" name="height" id="height" placeholder="180 (cm)">
+            </div>
+            <div class="group">
+                <label for="weight">Weight</label>
+                <input type="number" name="weight" id="weight" placeholder="75 (kg)">
+            </div>
+            <div class="group">
+                <label for="activity">Activity</label>
+                <select id="activity" name="activity">
+                    <option value="1">Sedentary (little or no exercise)</option>
+                    <option value="2">Lightly active (light exercise/sports 1-3 days/week)</option>
+                    <option value="3">Moderately active (moderate exercise/sports 3-5 days/week)</option>
+                    <option value="4">Very active (hard exercise/sports 6-7 days a week)</option>
+                    <option value="5">If you are extra active (very hard exercise/sports & a physical job)</option>
+                </select>
+            </div>
+            <button id="submit">Submit</button>
+        </div>    
+    </div>
+    
     <!--TO DO HERE-->
-    <h1 class="heading1">Menu</h1>
-    <hr class="linespace">
+    <div class="menu-container">
+        <h1 class="heading1">Menu</h1>
+        <hr class="linespace">
+    </div>
 
     <div class="container" id="contain">
         <!-- Dynamic product list will be inserted here -->
@@ -79,7 +117,7 @@
         <div class="side3">
             <h4>Contact us</h4>    
             <img src="assets/location.png" class="contact">
-            <span class="location">+886 1236 564</span>
+            <span class="location">Keelung, Taiwan</span>
             <a href="mailto:fattyuncle@gmail.com" style="color: white; text-decoration: none;">
                 <img src="assets/email.png"class="contact" style="position: relative; bottom: 20px;">
              <span class="email">fattyuncle@gmail.com</span></a>
