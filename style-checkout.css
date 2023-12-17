@@ -7,6 +7,10 @@ body{
 a{
     text-decoration: none;
 }
+::placeholder {
+    color: #fff;
+    opacity: 0.4;
+  }
 .container{
     width: 1200px;
     margin: auto;
