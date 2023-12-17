@@ -7,13 +7,20 @@ html{
     font-size: 20px;
 }
 body{
-    background-color: #121212;
+    background-color: black;
     font-family: 'Lato',sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #F8E6DE;
     overflow-x: hidden;
+}
+
+nav {
+    width: 100%;
+    position: absolute; /* Set the position to fixed to keep it at the top */
+    top: 0; /* Align it to the top of the viewport */
+    z-index: 1 ; /* Set a high z-index to make sure it appears above other elements */
 }
 ol {
     margin: 0;
@@ -47,7 +54,78 @@ ol {
 a{
     text-decoration: none;
 }
-
+.calorieText{
+    position: relative;
+    top: 130px;
+    left: 20px;
+}
+.calorie-modal{
+    border: none;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px; /* Adjust as needed */
+    z-index: 1;
+}
+.calorie-modal-content{
+    position: absolute;
+    left: 34%;
+    top: 25%;
+    background-color: #fefefe;
+    padding: 10px;
+    width: 30%;
+    height: 40%;
+    border-radius: 10px;
+    color: #100F10;
+}
+.calorie-heading{
+    text-align: center;
+}
+.group{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+#male, #female,#rather-not-say{
+    margin-left: 20px;
+}
+#age{
+    margin-left: 53px;
+}
+#height{
+    margin-left: 28px;
+}
+#weight{
+    margin-left: 23px;
+}
+#activity{
+    margin-left: 15px;
+}
+#submit{
+    font-weight: bold;
+    text-align: center;
+    background-color: greenyellow;
+    position: relative;
+    width: 15%;
+    height: 10%;
+    left: 210px;
+    border: none;
+}
+#submit:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.calorieText{
+    position: absolute;
+    bottom: 20px;
+}
+.calorieText:hover{
+    cursor: pointer;
+}
 #myBtn{
     border: none;
     background-color: transparent;
@@ -112,11 +190,21 @@ a{
 /*To Do Here */
 .heading1{
     text-align: center;
+    position: relative;
+    top: 7px;
 }
 .linespace{
     width: 100px;
     position: relative;
     bottom: 20px;
+}
+.menu-container{
+    position: relative;
+    top: 200px;
+}
+.container{
+    position: relative;
+    top: 200px;
 }
 
 .calorie{
