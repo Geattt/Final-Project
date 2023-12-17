@@ -56,8 +56,11 @@ a{
 }
 .calorieText{
     position: relative;
-    top: 130px;
+    top: 80px;
     left: 20px;
+}
+.calorieText:hover{
+    cursor: pointer;
 }
 .calorie-modal{
     border: none;
@@ -119,12 +122,8 @@ a{
     cursor: pointer;
     transform: scale(1.1);
 }
-.calorieText{
-    position: absolute;
-}
-.calorieText:hover{
-    cursor: pointer;
-}
+
+
 #myBtn{
     border: none;
     background-color: transparent;
