@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-about.css">
     <script src="script-about.js" defer></script>
+    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
 </head>
 
 <body>
@@ -17,17 +18,35 @@
                 <a href="about.html"><li class="lists">About</li></a>
                 <a href="contact.html"><li class="lists">Contact</li></a>
                 <li class="lists">
-                    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+                    <div class="totalQuantity">0</div>
+                    <button id="myBtn">
                     <lord-icon
                         src="https://cdn.lordicon.com/odavpkmb.json"
                         trigger="hover"
                         colors="primary:#ffffff,secondary:#A98F76"
                         style="width:40px;height:40px;top: -4px;">
                     </lord-icon>
+                    </button>
                 </li>
             </ol>
         </div>
     </nav>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <!-- Add your modal content here -->
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h3 class="cart-heading">Your Order</h3>
+            <hr>
+            <div class="cart-items"></div>
+            <div class="buttons">
+                <div class="checkout">
+                    <a href="checkout.html">CHECKOUT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="about">
         <section>
             <video src="assets/smoke1.mp4" autoplay  muted></video>
@@ -131,7 +150,7 @@
         <div class="side3">
             <h4>Contact us</h4>    
             <img src="assets/location.png" class="contact">
-            <span class="location">+886 1236 564</span>
+            <span class="location">Keelung, Taiwan</span>
             <a href="mailto:fattyuncle@gmail.com" style="color: white; text-decoration: none;">
                 <img src="assets/email.png"class="contact" style="position: relative; bottom: 20px;">
              <span class="email">fattyuncle@gmail.com</span></a>
