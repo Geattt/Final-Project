@@ -1,6 +1,95 @@
+document.addEventListener('DOMContentLoaded', function () {
 let modal = document.getElementById('myModal')
 let containers = document.getElementById('contain')
+let modalc = document.getElementById('myCalorieModal')
+let submitBtn = document.getElementById('submit')
+let calorieText = document.querySelector('.calorieText')
 
+// Load the flag from the cookie
+let calorieInfoProvided = getCookie('calorieInfoProvided');
+let calorieValue = getCookie('calorieValue');
+
+// Function to set a cookie
+function setCookie(name, value, days) {
+    let expires = '';
+    if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = '; expires=' + date.toUTCString();
+    }
+    document.cookie = name + '=' + value + expires + '; path=/';
+}
+
+// Function to get the value of a cookie by name
+function getCookie(name) {
+    let nameEQ = name + '=';
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1, c.length);
+        }
+        if (c.indexOf(nameEQ) === 0) {
+            return c.substring(nameEQ.length, c.length);
+        }
+    }
+    return null;
+}
+
+
+submitBtn.addEventListener('click',()=>{
+    let BMR = 0;
+    let gender = document.querySelector('input[name="gender"]:checked').value;
+    let age = document.getElementById("age").value;
+    let height = document.getElementById("height").value;
+    let weight = document.getElementById("weight").value;
+    let activity = document.getElementById("activity").value;
+    document.getElementById("myCalorieModal").style.display = "none";
+
+    if(gender == 1){
+        BMR = 66.5 + (13.75 * weight) + (5.003 * height) - (6.75 * age)
+    }
+    else{
+        BMR = 655.1 + (9.563 * weight) + (1.850 * height) - (4.676 * age)
+    }
+    //Calculate the activity
+    if(activity == 1){
+        BMR *= 1.2
+    }
+    else if(activity == 2){
+        BMR *= 1.375
+    }
+    else if(activity == 3){
+        BMR *= 1.55
+    }
+    else if(activity == 4){
+        BMR *= 1.725
+    }
+    else{
+        BMR *= 1.9
+    }
+    BMR = BMR.toFixed(0);
+    calorieText.innerText = 'Calorie Needed:' + BMR;
+    // Set the flag in the cookie to indicate that calorie info has been provided
+    setCookie('calorieInfoProvided', true, 365);
+    setCookie('calorieValue', BMR, 365);
+})
+function myCalorie(){
+    document.getElementById("myCalorieModal").style.display = "block";
+}
+
+calorieText.addEventListener('click',()=>{
+    console.log('clcik')
+    myCalorie();
+})
+
+// Check the flag to decide whether to show the calorie modal
+if (!calorieInfoProvided) {
+    myCalorie();
+} else{
+    // Display the calorie value from the cookie
+    calorieText.innerText = 'Calorie Needed: ' + calorieValue;
+}
 document.getElementById('myBtn').addEventListener('click', function() {
     modal.style.display = 'block';
     document.body.style.overflowY = 'hidden';
@@ -169,4 +258,4 @@ function changeQuantity($idProduct, $type){
     // reload html view cart
     addCartToHTML();
 }
-
+})
