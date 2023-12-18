@@ -130,9 +130,30 @@ async function checkVoucher() {
     }
   }
   
-  const buttonCheckout = document.querySelector('.buttonCheckout')
-  buttonCheckout.addEventListener('click',()=>{
-    alert('Order has been confirmed!')
-    //Go back to menu page
-    window.location.href = 'menu.html';
-  })
+const buttonCheckout = document.querySelector('.buttonCheckout');
+
+buttonCheckout.addEventListener('click', () => {
+    // Validate required input fields before allowing checkout
+    const requiredFields = document.querySelectorAll('input[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+        }
+    });
+
+    if (!isValid) {
+        alert('Please fill out all required fields before checking out.');
+        return;
+    }
+
+    // If all required fields are filled out, proceed with checkout
+    alert('Order has been confirmed!');
+    
+    // Go back to main page
+    window.location.href = 'main.html';
+
+    // Clear the cart data in the cookie
+    document.cookie = 'listCart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+});
