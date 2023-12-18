@@ -26,19 +26,24 @@
             <div class="form">
                 <div class="group">
                     <label for="name">Full Name</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" placeholder="Fatty Uncle" required>
                 </div>
     
                 <div class="group">
                     <label for="phone">Phone Number</label>
-                    <input type="text" name="phone" id="phone" placeholder="+886 000-123-456">
+                    <input type="text" name="phone" id="phone" placeholder="+886 000-123-456" required>
                 </div>
     
                 <div class="group">
                     <label for="date">Date</label>
-                    <input type="datetime-local" name="date" id="date">
+                    <input type="datetime-local" name="date" id="date" required>
                 </div>
     
+                <div class="group">
+                    <label for="people">Number of people</label>
+                    <input type="number" name="people" id="people" placeholder="3" min="1" required>
+                </div>
+
                 <div class="group">
                     <label for="voucher">Voucher</label>
                     <input type="text" name="voucher" id="voucher">
