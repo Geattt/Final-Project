@@ -72,6 +72,126 @@ a{
     text-decoration: none;
     color: #F8E6DE;
 }
+
+#myBtn{
+    border: none;
+    background-color: transparent;
+    position: relative;
+    bottom: 25px;
+}
+
+#myBtn:hover{
+    cursor: pointer;
+}
+.totalQuantity{
+    position: relative;
+    left: 40px;
+    bottom: 10px;
+}
+
+.modal {
+    border: none;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px; /* Adjust as needed */
+    z-index: 2;
+}
+
+.modal-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fefefe;
+    padding: 10px;
+    width: 24%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/* Close button style */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.cart-heading{
+    color: #121212;
+    text-align: center;
+    position: relative;
+    left: 7px;
+}
+
+.item{
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.item img{
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.name-cart{
+    color: black;
+    margin: 10px;
+}
+.price-cart{
+    color: black;
+    margin: 10px;
+}
+.quantity-cart{
+    margin: 10px;
+    color: #100F10;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.value-cart{
+    position: relative;
+    top: 3px;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+}
+
+.checkout{
+    display: flex;
+    flex-direction: column;
+    /* Adjust as needed */
+    border: 1px solid black;
+    background-color: orange;
+    position: fixed; /* Change from relative to fixed */
+    bottom: 0; /* Stick to the bottom of the viewport */
+    right: 0; /* Stick to the left of the viewport */
+    width: 25.1%; /* Take up the full width of the viewport */
+    height: 4%;
+}
+.checkout a{
+    color: #100F10;
+    position: relative;
+    top: 5px;
+}
+
 .home-section1{
     position: relative;
     left: 18rem;
@@ -136,6 +256,7 @@ a{
 #order{
     background-color: #121212;
     border: 1px solid white;
+    border-radius: 10px;
     color: whitesmoke;
     font-weight: bold;
     position: relative;
@@ -144,10 +265,15 @@ a{
     padding: 18px;
     
 }
+#order a{
+    text-decoration: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
 .active #order{
     animation: glow-ins 5s forwards;
 }
-#order:hover{
+#order:hover,#order a:hover{
     background-color: #F5D400;
     color: #121212;
     cursor: pointer;
@@ -171,6 +297,12 @@ a{
     height: 270px;
     margin-right: 50px;
     margin-top: 40px;
+}
+
+#pic1:hover,#pic2:hover,#pic3:hover,
+#pic4:hover,#pic5:hover,#pic6:hover{
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 .home-section4{
