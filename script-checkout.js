@@ -117,6 +117,8 @@ async function checkVoucher() {
         voucherInput.disabled = true;
         // Disable the voucher button
         voucherButton.disabled = true;
+        voucherButton.style.opacity = 0.6
+        voucherButton.style.cursor = 'not-allowed'
         } else {
           alert('Invalid or used voucher!');
           // You can handle the case where the voucher is invalid or used
