@@ -47,7 +47,7 @@ ol {
     justify-content: center;
     position: relative;
     bottom: 3.5rem;
-    left: 25rem;
+    left: 29.5rem;
 }
 
 .logo {
@@ -390,5 +390,3 @@ a{
 .reveal.active {
     opacity: 1;
 }
-
-
