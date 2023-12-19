@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+::-webkit-scrollbar {
+    width: 2em;
+    height: 2em
+}
+
 html{
     font-size: 20px;
 }
