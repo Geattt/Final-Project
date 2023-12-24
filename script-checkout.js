@@ -96,7 +96,7 @@ async function checkVoucher() {
           const discountedTotalPrice = originalTotalPrice - voucherData.value;
 
           // Check if the discounted total price is smaller than zero
-        if (discountedTotalPrice < 0) {
+        if (discountedTotalPrice <= 0) {
             // If the price is smaller than zero, set it to "Free"
             totalPriceHTML.innerText = 'Free';
           } else {
@@ -154,7 +154,7 @@ buttonCheckout.addEventListener('click', () => {
     alert('Order has been confirmed!');
     
     // Go back to main page
-    window.location.href = 'main.html';
+    window.location.href = 'index.html';
 
     // Clear the cart data in the cookie
     document.cookie = 'listCart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
