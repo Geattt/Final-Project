@@ -5,12 +5,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node script-backend.js",
-    "start-frontend": "node script.js"
+    "deploy": "gcloud preview app deploy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "cors": "^2.8.5",
     "mongodb": "^6.3.0"
   },
